@@ -1,79 +1,71 @@
-/* Navigation Bar Styles */
-nav {
-    background-color: #333;
-    padding: 10px;
-    text-align: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Thumbnail Downloader</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#how-to-use">How to Use</a></li>
+            <li><a href="#why-use">Why Use</a></li>
+            <li><a href="#about-us">About Us</a></li>
+        </ul>
+    </nav>
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+    <div class="container">
+        <section id="home">
+            <h1>YouTube Thumbnail Downloader</h1>
+            <p>Paste a YouTube video URL and choose thumbnail quality to download the perfect image for your use.</p>
+            
+            <input type="text" id="videoUrl" placeholder="Enter YouTube video URL">
+            
+            <label for="quality">Select Quality:</label>
+            <select id="quality">
+                <option value="maxresdefault">HD (Max Resolution)</option>
+                <option value="sddefault">SD (Standard Definition)</option>
+                <option value="mqdefault">Medium Quality</option>
+                <option value="hqdefault">Low Quality</option>
+            </select>
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
+            <button onclick="getThumbnail()">Get Thumbnail</button>
+            
+            <div id="thumbnail-container" style="display: none;">
+                <h3>Thumbnail Preview:</h3>
+                <img id="thumbnailImage" src="" alt="Thumbnail">
+                <a id="downloadBtn" href="#" download="youtube_thumbnail.jpg">Download Image</a>
+            </div>
+        </section>
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 8px;
-}
+        <!-- How to Use Section -->
+        <section id="how-to-use">
+            <h2>How to Use</h2>
+            <p>To download the thumbnail of any YouTube video, follow these simple steps:</p>
+            <ol>
+                <li>Copy the **URL** of any YouTube video.</li>
+                <li>Paste the URL in the input box above.</li>
+                <li>Choose the quality of the thumbnail (HD, SD, etc.).</li>
+                <li>Click on **Get Thumbnail** to see the preview and download it.</li>
+            </ol>
+        </section>
 
-nav ul li a:hover {
-    background-color: #575757;
-    border-radius: 5px;
-}
+        <!-- Why Use Section -->
+        <section id="why-use">
+            <h2>Why Use This Tool?</h2>
+            <p>Sometimes you may need to use the thumbnail of a YouTube video for your projects, presentations, or social media. With this tool, you can easily get the perfect image without any hassle!</p>
+        </section>
 
-/* Container for Content */
-.container {
-    margin: 20px;
-    font-family: Arial, sans-serif;
-}
+        <!-- About Us Section -->
+        <section id="about-us">
+            <h2>About Us</h2>
+            <p>This tool is designed for YouTube content creators, digital marketers, and anyone in need of quick access to high-quality video thumbnails. We provide an easy-to-use solution to help you enhance your content with the right visuals.</p>
+        </section>
+    </div>
 
-/* Section Styles */
-section {
-    margin-bottom: 30px;
-}
-
-section h2 {
-    color: #333;
-    font-size: 24px;
-}
-
-section p, section ol {
-    font-size: 16px;
-    color: #666;
-}
-
-section ol {
-    margin-left: 20px;
-}
-
-section#home {
-    text-align: center;
-}
-
-/* Thumbnail Image Styles */
-#thumbnail-container img {
-    max-width: 100%;
-    height: auto;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-}
-
-#thumbnail-container a {
-    display: inline-block;
-    padding: 10px;
-    background-color: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-#thumbnail-container a:hover {
-    background-color: #218838;
-}
+    <script src="javascript.js"></script>
+</body>
+</html>
