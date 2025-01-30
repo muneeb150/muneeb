@@ -3,69 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Download YouTube video thumbnails easily with our simple tool.">
     <title>YouTube Thumbnail Downloader</title>
-    <link rel="stylesheet" href="css.css">
+    <style>
+        /* General body styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f4f8fb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Header styles */
+        header {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 3rem;
+            font-weight: bold;
+            background-color: #00aaff;
+            color: #fff;
+            border-bottom: 3px solid #ff6600;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header:hover {
+            background-color: #0099cc;
+            transform: scale(1.05);
+        }
+
+        header span {
+            color: #ff6600;
+        }
+
+        /* Container for the main content */
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .instruction {
+            background-color: #fafafa;
+            border: 2px dashed #ff6600;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .instruction h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .instruction ul {
+            text-align: left;
+            margin: 0;
+            padding: 0;
+            list-style: inside;
+            font-size: 1.1rem;
+        }
+
+        .instruction li {
+            margin: 10px 0;
+        }
+
+        /* Input and button styling */
+        input[type="text"] {
+            width: 90%;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus {
+            border-color: #00aaff;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 1.2rem;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e65c00;
+            transform: scale(1.05);
+        }
+
+        /* Thumbnail styling */
+        .thumbnail {
+            display: none;
+            max-width: 100%;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #downloadLink button {
+            background-color: #28a745;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            padding: 20px 0;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #00ff2a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Animation for elements */
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animated {
+            animation: slideIn 0.8s ease-out;
+        }
+
+        /* Additional sections */
+        .section {
+            margin-top: 50px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h3 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .section ul {
+            font-size: 1.1rem;
+            margin-left: 20px;
+        }
+
+        .section ul li {
+            margin: 10px 0;
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
+
+<header>
+    YouTube <span>Thumbnail</span> Downloader
+</header>
+
+<div class="container animated">
+    <h2>Get Thumbnails with Ease</h2>
+    <p>Simply paste any YouTube video URL below and download the thumbnail instantly. Quick, easy, and free!</p>
+
+    <div class="instruction">
+        <h3>How to Use:</h3>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#how-to-use">How to Use</a></li>
-            <li><a href="#why-use">Why Use</a></li>
-            <li><a href="#about-us">About Us</a></li>
+            <li>Copy the URL of any YouTube video.</li>
+            <li>Paste the URL in the box below.</li>
+            <li>Click the "Check Thumbnail" button to generate the thumbnail.</li>
+            <li>Click the "Download" button below the image to save the thumbnail.</li>
         </ul>
-    </nav>
-
-    <div class="container">
-        <section id="home">
-            <h1>YouTube Thumbnail Downloader</h1>
-            <p>Paste a YouTube video URL and choose thumbnail quality to download the perfect image for your use.</p>
-            
-            <input type="text" id="videoUrl" placeholder="Enter YouTube video URL">
-            
-            <label for="quality">Select Quality:</label>
-            <select id="quality">
-                <option value="maxresdefault">HD (Max Resolution)</option>
-                <option value="sddefault">SD (Standard Definition)</option>
-                <option value="mqdefault">Medium Quality</option>
-                <option value="hqdefault">Low Quality</option>
-            </select>
-
-            <button onclick="getThumbnail()">Get Thumbnail</button>
-            
-            <div id="thumbnail-container" style="display: none;">
-                <h3>Thumbnail Preview:</h3>
-                <img id="thumbnailImage" src="" alt="Thumbnail">
-                <a id="downloadBtn" href="#" download="youtube_thumbnail.jpg">Download Image</a>
-            </div>
-        </section>
-
-        <!-- How to Use Section -->
-        <section id="how-to-use">
-            <h2>How to Use</h2>
-            <p>To download the thumbnail of any YouTube video, follow these simple steps:</p>
-            <ol>
-                <li>Copy the **URL** of any YouTube video.</li>
-                <li>Paste the URL in the input box above.</li>
-                <li>Choose the quality of the thumbnail (HD, SD, etc.).</li>
-                <li>Click on **Get Thumbnail** to see the preview and download it.</li>
-            </ol>
-        </section>
-
-        <!-- Why Use Section -->
-        <section id="why-use">
-            <h2>Why Use This Tool?</h2>
-            <p>Sometimes you may need to use the thumbnail of a YouTube video for your projects, presentations, or social media. With this tool, you can easily get the perfect image without any hassle!</p>
-        </section>
-
-        <!-- About Us Section -->
-        <section id="about-us">
-            <h2>About Us</h2>
-            <p>This tool is designed for YouTube content creators, digital marketers, and anyone in need of quick access to high-quality video thumbnails. We provide an easy-to-use solution to help you enhance your content with the right visuals.</p>
-        </section>
     </div>
 
-    <script src="javascript.js"></script>
+    <input type="text" id="youtubeURL" placeholder="Enter YouTube video URL">
+    <br>
+    <button onclick="getThumbnail()">Check Thumbnail</button>
+
+    <div id="thumbnailContainer">
+        <img id="thumbnail" class="thumbnail animated" src="" alt="YouTube Thumbnail">
+        <br>
+        <a id="downloadLink" href="#" download>
+            <button>Download Thumbnail</button>
+        </a>
+    </div>
+</div>
+
+<div class="section animated">
+    <h3>Why Use Our Tool?</h3>
+    <p>Our tool offers a fast and easy way to download YouTube thumbnails. Here are some reasons why it's the best choice:</p>
+    <ul>
+        <li>Free to use – No charges or hidden fees.</li>
+        <li>Simple and fast process – Just paste a link, and you’re done.</li>
+        <li>High-quality images – We fetch the highest resolution available.</li>
+        <li>Completely secure – We don’t store your videos or personal data.</li>
+    </ul>
+</div>
+
+<div class="section animated">
+    <h3>Frequently Asked Questions (FAQ)</h3>
+    <ul>
+        <li><strong>How do I download the thumbnail?</strong><br>Just paste the YouTube video URL and click on "Download Thumbnail" to generate the image, then click "Download" to save it.</li>
+        <li><strong>Is it free to use?</strong><br>Yes, this tool is completely free with no registration required.</li>
+        <li><strong>What video formats are supported?</strong><br>This tool only works for YouTube video URLs.</li>
+    </ul>
+</div>
+
+<div class="section animated">
+    <h3>Privacy & Disclaimer</h3>
+    <p>Your privacy is important to us. This tool does not store or share your personal data. We do not collect information about the videos you access. The thumbnails are fetched directly from YouTube servers for your convenience.</p>
+</div>
+
+<footer>
+    <p>&copy; 2025 YouTube Thumbnail Downloader | <a href="https://www.youtube.com" target="_blank">Visit YouTube</a></p>
+    <p>Disclaimer: This tool is for educational purposes only.</p>
+</footer>
+
+<script>
+    function getThumbnail() {
+        const url = document.getElementById('youtubeURL').value;
+        const videoID = getYouTubeVideoID(url);
+
+        if (videoID) {
+            const thumbnailUrl = `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`;
+            document.getElementById('thumbnail').src = thumbnailUrl;
+            document.getElementById('thumbnail').style.display = 'block';
+            document.getElementById('downloadLink').href = thumbnailUrl;
+        } else {
+            alert("Please enter a valid YouTube URL.");
+        }
+    }
+
+    function getYouTubeVideoID(url) {
+        const regex = /(?:https?:\/\/(?:www\.)?youtube\.com\/(?:[^/]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+        const match = url.match(regex);
+        return match ? match[1] : null;
+    }
+</script>
+
 </body>
 </html>
