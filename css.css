@@ -97,3 +97,83 @@ a:hover {
     background: linear-gradient(45deg, #2E8B57, #4CAF50);
     transform: scale(1.05);
 }
+/* Navigation Bar Styles */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Container for Content */
+.container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Section Styles */
+section {
+    margin-bottom: 30px;
+}
+
+section h2 {
+    color: #333;
+    font-size: 24px;
+}
+
+section p, section ol {
+    font-size: 16px;
+    color: #666;
+}
+
+section ol {
+    margin-left: 20px;
+}
+
+section#home {
+    text-align: center;
+}
+
+/* Thumbnail Image Styles */
+#thumbnail-container img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+}
+
+#thumbnail-container a {
+    display: inline-block;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#thumbnail-container a:hover {
+    background-color: #218838;
+}
+
